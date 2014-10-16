@@ -1,9 +1,9 @@
 DOM
 ===
 
-A collection of DOM Elements, CSS Properties, DOM Content Models and more in JavaScript Helper Objects for use with Web Applications.
+A collection of HTML DOM Elements, CSS Properties, HTML DOM Content Models and more in JavaScript Helper Objects for use with Web Applications.
 
-Created object primarily for use with a CSS Editor UI. Can be expanded for use with any Web Application that needs DOM elements information and CSS properties.
+Created object primarily for use with a CSS Editor UI. Can be expanded for use with any Web Application that needs expanded HTML DOM elements' information and CSS properties.
 
 ## How to Use
 You would first need to load the JS file containing this DOM object. You can add as many other objects and helper functions to the DOM object if you wish to maintain a single DOM object with all DOM helpers.
