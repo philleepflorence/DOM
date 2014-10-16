@@ -10,7 +10,6 @@ You would first need to load the JS file containing this DOM object. You can add
 
 To get more information from an element while contenteditable mode is set to active:
 ```javascript
-
   $(document).on('mouseup', function(e)
   {
     var target  = e.target;
@@ -19,7 +18,6 @@ To get more information from an element while contenteditable mode is set to act
     var element = DOM.element[tagname];
     var isTags  = element.tags;
   });
-  
 ```
 
 ## Glossary
