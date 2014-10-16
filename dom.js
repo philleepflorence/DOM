@@ -1,10 +1,10 @@
-var DOM = function () {
+var DOM = (function () {
 
     this.colors = ["aliceblue", "antiquewhite", "aqua", "aqu, amarine", "azure", "beige", "bisque", "black", "blanchedalmond", "blue", "blueviolet", "brown", "burlywood", "cadetblue", "chartreuse", "chocolate", "coral", "cornflowerblue", "cornsilk", "crimson", "cyan", "darkblue", "darkcyan", "darkgoldenrod", "darkgray", "darkgreen", "darkkhaki", "darkmagenta", "darkolivegreen", "darkorange", "darkorchid", "darkred", "darksalmon", "darkseagreen", "darkslateblue", "darkslategray", "darkturquoise", "darkviolet", "deeppink", "deepskyblue", "dimgray", "dodgerblue", "firebrick", "floralwhite", "forestgreen", "fuchsia", "gainsboro", "ghostwhite", "gold", "goldenrod", "gray", "green", "greenyellow", "honeydew", "hotpink", "indianred", "indigo", "ivory", "khaki", "lavender", "lavenderblush", "lawngreen", "lemonchiffon", "lightblue", "lightcoral", "lightcyan", "lightgoldenrodyellow", "lightgray", "lightgreen", "lightpink", "lightsalmon", "lightseagreen", "lightskyblue", "lightslategray", "lightsteelblue", "lightyellow", "lime", "limegreen", "linen", "magenta", "maroon", "mediumaquamarine", "mediumblue", "mediumorchid", "mediumpurple", "mediumseagreen", "mediumslateblue", "mediumspringgreen", "mediumturquoise", "mediumvioletred", "midnightblue", "mintcream", "mistyrose", "moccasin", "navajowhite", "navy", "oldlace", "olive", "olivedrab", "orange", "orangered", "orchid", "palegoldenrod", "palegreen", "paleturquoise", "palevioletred", "papayawhip", "peachpuff", "peru", "pink", "plum", "powderblue", "purple", "red", "rosybrown", "royalblue", "saddlebrown", "salmon", "sandybrown", "seagreen", "seashell", "sienna", "silver", "skyblue", "slateblue", "slategray", "snow", "springgreen", "steelblue", "tan", "teal", "thistle", "tomato", "turquoise", "violet", "wheat", "white", "whitesmoke", "yellow", "yellowgreen"];
 
     this.cssProperties = {
         'color': {
-            level: 1,
+            version: 1,
             group : 'color',
             definition: 'Sets the color of text',
             values: this.colors,
@@ -12,7 +12,7 @@ var DOM = function () {
             units: null
         },
         'opacity': {
-            level: 3,
+            version: 3,
             group : 'color',
             definition: 'Sets the opacity level for an element',
             values: null,
@@ -20,7 +20,7 @@ var DOM = function () {
             units: null
         },
         'background-color': {
-            level: 1,
+            version: 1,
             group : 'background',
             definition: 'Sets the background color of an element',
             values: this.colors,
@@ -28,7 +28,7 @@ var DOM = function () {
             units: null
         },
         'background-image': {
-            level: 1,
+            version: 1,
             group : 'background',
             definition: 'Sets the background image for an element',
             values: null,
@@ -36,7 +36,7 @@ var DOM = function () {
             units: null
         },
         'background-repeat': {
-            level: 1,
+            version: 1,
             group : 'background',
             definition: 'Sets how a background image will be repeated',
             values: ['repeat', 'repeat-x', 'repeat-y', 'no-repeat'],
@@ -44,7 +44,7 @@ var DOM = function () {
             units: null
         },
         'background-position': {
-            level: 1,
+            version: 1,
             group : 'background',
             definition: 'Sets the starting position of a background image',
             values: ['left top', 'left center', 'left bottom', 'right top', 'right center', 'right bottom', 'center top', 'center center', 'center bottom'],
@@ -52,7 +52,7 @@ var DOM = function () {
             units: null
         },
         'background-attachment': {
-            level: 1,
+            version: 1,
             group : 'background',
             definition: 'Sets whether a background image is fixed or scrolls with the rest of the page',
             values: ['scroll', 'fixed', 'local'],
@@ -60,7 +60,7 @@ var DOM = function () {
             units: null
         },
         'background-size': {
-            level: 3,
+            version: 3,
             group : 'background',
             definition: 'Specifies the size of the background images',
             values: ['auto', 'cover', 'contain'],
@@ -68,7 +68,7 @@ var DOM = function () {
             units: null
         },
         'box-shadow': {
-            level: 3,
+            version: 3,
             group : 'border',
             definition: 'Attaches one or more drop-shadows or glows to the content box',
             values: null,
@@ -97,7 +97,7 @@ var DOM = function () {
             }
         },
         'border-width': {
-            level: 1,
+            version: 1,
             group : 'border',
             definition: 'Sets the width of the four borders',
             values: null,
@@ -105,7 +105,7 @@ var DOM = function () {
             units: ['px', 'em']
         },
         'border-color': {
-            level: 1,
+            version: 1,
             group : 'border',
             definition: 'Sets the color of the four borders',
             values: this.colors,
@@ -113,7 +113,7 @@ var DOM = function () {
             units: null
         },
         'border-style': {
-            level: 1,
+            version: 1,
             group : 'border',
             definition: 'Sets the style of the four borders',
             values: ['none', 'hidden', 'dotted', 'dashed', 'solid', 'double'],
@@ -121,7 +121,7 @@ var DOM = function () {
             units: null
         },
         'border-radius': {
-            level: 3,
+            version: 3,
             group : 'border',
             definition: 'Defines the shape of the border',
             values: null,
@@ -129,7 +129,7 @@ var DOM = function () {
             units: ['px', 'em', '%']
         },
         'border-top-width': {
-            level: 1,
+            version: 1,
             group : 'border',
             definition: 'Sets the width of the top border',
             values: null,
@@ -137,7 +137,7 @@ var DOM = function () {
             units: ['px', 'em']
         },
         'border-top-style': {
-            level: 1,
+            version: 1,
             group : 'border',
             definition: 'Sets the style of the top border',
             values: ['none', 'hidden', 'dotted', 'dashed', 'solid', 'double'],
@@ -145,7 +145,7 @@ var DOM = function () {
             units: null
         },
         'border-top-color': {
-            level: 1,
+            version: 1,
             group : 'border',
             definition: 'Sets the color of the top border',
             values: this.colors,
@@ -153,7 +153,7 @@ var DOM = function () {
             units: null
         },
         'border-top-left-radius': {
-            level: 3,
+            version: 3,
             group : 'border',
             definition: 'Defines the shape of the border of the top-left corner',
             values: null,
@@ -161,7 +161,7 @@ var DOM = function () {
             units: ['px', 'em', '%']
         },
         'border-top-right-radius': {
-            level: 3,
+            version: 3,
             group : 'border',
             definition: 'Defines the shape of the border of the top-right corner',
             values: null,
@@ -169,7 +169,7 @@ var DOM = function () {
             units: ['px', 'em', '%']
         },
         'border-right-width': {
-            level: 1,
+            version: 1,
             group : 'border',
             definition: 'Sets the width of the right border',
             values: null,
@@ -177,7 +177,7 @@ var DOM = function () {
             units: ['px', 'em']
         },
         'border-right-color': {
-            level: 1,
+            version: 1,
             group : 'border',
             definition: 'Sets the color of the right border',
             values: this.colors,
@@ -185,7 +185,7 @@ var DOM = function () {
             units: null
         },
         'border-right-style': {
-            level: 1,
+            version: 1,
             group : 'border',
             definition: 'Sets the style of the right border',
             values: ['none', 'hidden', 'dotted', 'dashed', 'solid', 'double'],
@@ -193,7 +193,7 @@ var DOM = function () {
             units: null
         },
         'border-bottom-width': {
-            level: 1,
+            version: 1,
             group : 'border',
             definition: 'Sets the width of the bottom border',
             values: null,
@@ -201,7 +201,7 @@ var DOM = function () {
             units: ['px', 'em']
         },
         'border-bottom-color': {
-            level: 1,
+            version: 1,
             group : 'border',
             definition: 'Sets the color of the bottom border',
             values: this.colors,
@@ -209,7 +209,7 @@ var DOM = function () {
             units: null
         },
         'border-bottom-style': {
-            level: 1,
+            version: 1,
             group : 'border',
             definition: 'Sets the style of the bottom border',
             values: ['none', 'hidden', 'dotted', 'dashed', 'solid', 'double'],
@@ -217,7 +217,7 @@ var DOM = function () {
             units: null
         },
         'border-bottom-left-radius': {
-            level: 3,
+            version: 3,
             group : 'border',
             definition: 'Defines the shape of the border of the bottom-left corner',
             values: null,
@@ -225,7 +225,7 @@ var DOM = function () {
             units: ['px', 'em', '%']
         },
         'border-bottom-right-radius': {
-            level: 3,
+            version: 3,
             group : 'border',
             definition: 'Defines the shape of the border of the bottom-right corner',
             values: null,
@@ -233,7 +233,7 @@ var DOM = function () {
             units: ['px', 'em', '%']
         },
         'border-left-width': {
-            level: 1,
+            version: 1,
             group : 'border',
             definition: 'Sets the width of the left border',
             values: null,
@@ -241,7 +241,7 @@ var DOM = function () {
             units: ['px', 'em']
         },
         'border-left-color': {
-            level: 1,
+            version: 1,
             group : 'border',
             definition: 'Sets the color of the left border',
             values: this.colors,
@@ -249,7 +249,7 @@ var DOM = function () {
             units: null
         },
         'border-left-style': {
-            level: 1,
+            version: 1,
             group : 'border',
             definition: 'Sets the style of the left border',
             values: ['none', 'hidden', 'dotted', 'dashed', 'solid', 'double'],
@@ -257,7 +257,7 @@ var DOM = function () {
             units: null
         },
         'display': {
-            level: 1,
+            version: 1,
             group : 'basic box',
             definition: 'Specifies how a certain HTML element should be displayed',
             values: ['block', 'inline', 'inline-block', 'none'],
@@ -265,7 +265,7 @@ var DOM = function () {
             units: null
         },
         'visibility': {
-            level: 2,
+            version: 2,
             group : 'basic box',
             definition: 'Specifies whether or not an element is visible',
             values: ['hidden', 'visible'],
@@ -273,7 +273,7 @@ var DOM = function () {
             units: null
         },
         'width': {
-            level: 1,
+            version: 1,
             group : 'basic box',
             definition: 'Sets the width of an element',
             values: null,
@@ -281,7 +281,7 @@ var DOM = function () {
             units: ['px', 'em', '%']
         },
         'height': {
-            level: 1,
+            version: 1,
             group : 'basic box',
             definition: 'Sets the height of an element',
             values: null,
@@ -289,7 +289,7 @@ var DOM = function () {
             units: ['px', 'em', '%']
         },
         'top': {
-            level: 2,
+            version: 2,
             group : 'basic box',
             definition: 'Specifies the top position of a positioned element',
             values: null,
@@ -297,7 +297,7 @@ var DOM = function () {
             units: ['px', 'em', '%']
         },
         'right': {
-            level: 2,
+            version: 2,
             group : 'basic box',
             definition: 'Specifies the right position of a positioned element',
             values: null,
@@ -305,7 +305,7 @@ var DOM = function () {
             units: ['px', 'em', '%']
         },
         'bottom': {
-            level: 2,
+            version: 2,
             values: null,
             group : 'basic box',
             definition: 'Specifies the bottom position of a positioned element',
@@ -313,7 +313,7 @@ var DOM = function () {
             units: ['px', 'em', '%']
         },
         'left': {
-            level: 2,
+            version: 2,
             group : 'basic box',
             definition: 'Specifies the left position of a positioned element',
             values: null,
@@ -321,7 +321,7 @@ var DOM = function () {
             units: ['px', 'em', '%']
         },
         'padding-top': {
-            level: 1,
+            version: 1,
             group : 'basic box',
             definition: 'Sets the top padding of an element',
             values: null,
@@ -329,7 +329,7 @@ var DOM = function () {
             units: ['px', 'em', '%']
         },
         'padding-right': {
-            level: 1,
+            version: 1,
             group : 'basic box',
             definition: 'Sets the right padding of an element',
             values: null,
@@ -337,7 +337,7 @@ var DOM = function () {
             units: ['px', 'em', '%']
         },
         'padding-bottom': {
-            level: 1,
+            version: 1,
             group : 'basic box',
             definition: 'Sets the bottom padding of an element',
             values: null,
@@ -345,7 +345,7 @@ var DOM = function () {
             units: ['px', 'em', '%']
         },
         'padding-left': {
-            level: 1,
+            version: 1,
             group : 'basic box',
             definition: 'Sets the left padding of an element',
             values: null,
@@ -353,7 +353,7 @@ var DOM = function () {
             units: ['px', 'em', '%']
         },
         'float': {
-            level: 1,
+            version: 1,
             group : 'basic box',
             definition: 'Specifies whether or not a box should float',
             values: ['none', 'left', 'right'],
@@ -361,7 +361,7 @@ var DOM = function () {
             units: null
         },
         'clear': {
-            level: 1,
+            version: 1,
             group : 'basic box',
             definition: 'Specifies which sides of an element where other floating elements are not allowed',
             values: ['none', 'left', 'right', 'both'],
@@ -369,7 +369,7 @@ var DOM = function () {
             units: null
         },
         'position': {
-            level: 2,
+            version: 2,
             group : 'basic box',
             definition: 'Specifies the type of positioning method used for an element (static, relative, absolute or fixed)',
             values: ['static', 'absolute', 'fixed', 'relative'],
@@ -377,7 +377,7 @@ var DOM = function () {
             units: null
         },
         'overflow': {
-            level: 2,
+            version: 2,
             group : 'basic box',
             definition: "Specifies what happens if content overflows an element's box",
             values: ['visible', 'hidden', 'scroll', 'auto'],
@@ -385,7 +385,7 @@ var DOM = function () {
             units: null
         },
         'overflow-x': {
-            level: 3,
+            version: 3,
             group : 'basic box',
             definition: "Specifies whether or not to clip the left/right edges of the content, if it overflows the element's content area",
             values: ['visible', 'hidden', 'scroll', 'auto'],
@@ -393,7 +393,7 @@ var DOM = function () {
             units: null
         },
         'overflow-y': {
-            level: 3,
+            version: 3,
             group : 'basic box',
             definition: "Specifies whether or not to clip the top/bottom edges of the content, if it overflows the element's content area",
             values: ['visible', 'hidden', 'scroll', 'auto'],
@@ -401,7 +401,7 @@ var DOM = function () {
             units: null
         },
         'vertical-align': {
-            level: 1,
+            version: 1,
             group : 'basic box',
             definition: 'Sets the vertical alignment of an element',
             values: ['baseline', 'length', 'sub', 'super', 'top', 'text-top', 'middle', 'bottom', 'text-bottom'],
@@ -409,7 +409,7 @@ var DOM = function () {
             units: null
         },
         'z-index': {
-            level: 2,
+            version: 2,
             group : 'basic box',
             definition: 'Sets the stack order of a positioned element',
             values: null,
@@ -417,7 +417,7 @@ var DOM = function () {
             units: null
         },
         'margin-top': {
-            level: 1,
+            version: 1,
             group : 'flexible box',
             definition: 'Sets the top margin of an element',
             values: null,
@@ -425,7 +425,7 @@ var DOM = function () {
             units: ['px', 'em', '%']
         },
         'margin-right': {
-            level: 1,
+            version: 1,
             group : 'flexible box',
             definition: 'Sets the right margin of an element',
             values: null,
@@ -433,7 +433,7 @@ var DOM = function () {
             units: ['px', 'em', '%']
         },
         'margin-bottom': {
-            level: 1,
+            version: 1,
             group : 'flexible box',
             definition: 'Sets the bottom margin of an element',
             values: null,
@@ -441,7 +441,7 @@ var DOM = function () {
             units: ['px', 'em', '%']
         },
         'margin-left': {
-            level: 1,
+            version: 1,
             group : 'flexible box',
             definition: 'Sets the left margin of an element',
             values: null,
@@ -449,7 +449,7 @@ var DOM = function () {
             units: ['px', 'em', '%']
         },
         'min-width': {
-            level: 1,
+            version: 1,
             group : 'basic box',
             definition: 'Sets the minimum width of an element',
             values: null,
@@ -457,7 +457,7 @@ var DOM = function () {
             units: ['px', 'em', '%']
         },
         'min-height': {
-            level: 1,
+            version: 1,
             group : 'basic box',
             definition: 'Sets the minimum height of an element',
             values: null,
@@ -465,7 +465,7 @@ var DOM = function () {
             units: ['px', 'em', '%']
         },
         'max-width': {
-            level: 1,
+            version: 1,
             group : 'basic box',
             definition: 'Sets the maximum width of an element',
             values: null,
@@ -473,7 +473,7 @@ var DOM = function () {
             units: ['px', 'em', '%']
         },
         'max-height': {
-            level: 1,
+            version: 1,
             group : 'basic box',
             definition: 'Sets the maximum height of an element',
             values: null,
@@ -481,7 +481,7 @@ var DOM = function () {
             units: ['px', 'em', '%']
         },
         'text-transform': {
-            level: 1,
+            version: 1,
             group : 'text',
             definition: 'Controls the capitalization of text',
             values: ['none', 'capitalize', 'uppercase', 'lowercase'],
@@ -489,7 +489,7 @@ var DOM = function () {
             units: null
         },
         'letter-spacing': {
-            level: 1,
+            version: 1,
             group : 'text',
             definition: 'Increases or decreases the space between characters in a text',
             values: null,
@@ -497,7 +497,7 @@ var DOM = function () {
             units: ['px', 'pt', 'em', 'cm', '%']
         },
         'word-spacing': {
-            level: 3,
+            version: 3,
             group : 'text',
             definition: 'Increases or decreases the space between words in a text',
             values: null,
@@ -505,7 +505,7 @@ var DOM = function () {
             units: ['px', 'pt', 'em', 'cm', '%']
         },
         'text-indent': {
-            level: 1,
+            version: 1,
             group : 'text',
             definition: 'Specifies the indentation of the first line in a text-block',
             values: null,
@@ -513,7 +513,7 @@ var DOM = function () {
             units: ['px', 'pt', 'em', 'cm', '%']
         },
         'line-height': {
-            level: 1,
+            version: 1,
             group : 'text',
             definition: 'Sets the line height',
             values: null,
@@ -521,7 +521,7 @@ var DOM = function () {
             units: ['px', 'pt', 'em', 'cm', '%']
         },
         'text-align': {
-            level: 1,
+            version: 1,
             group : 'text',
             definition: 'Specifies the horizontal alignment of text',
             values: ['left', 'right', 'center', 'justify'],
@@ -529,7 +529,7 @@ var DOM = function () {
             units: null
         },
         'white-space': {
-            level: 1,
+            version: 1,
             group : 'text',
             definition: 'Specifies how white-space inside an element is handled',
             values: ['normal', 'nowrap', 'pre', 'pre-line', 'pre-wrap'],
@@ -537,7 +537,7 @@ var DOM = function () {
             units: null
         },
         'text-decoration': {
-            level: 1,
+            version: 1,
             group : 'text decoration',
             definition: 'Specifies the decoration added to text',
             values: ['none', 'underline', 'overline', 'line-through'],
@@ -545,7 +545,7 @@ var DOM = function () {
             units: null
         },
         'text-shadow': {
-            level: 3,
+            version: 3,
             group : 'text decoration',
             definition: 'Adds shadow to text',
             values: null,
@@ -570,7 +570,7 @@ var DOM = function () {
             }
         },
         'font-family': {
-            level: 1,
+            version: 1,
             group : 'font',
             definition: 'Specifies the font family or group of fonts for text',
             values: ['Georgia, serif', '"Palatino Linotype", "Book Antiqua", Palatino, serif', '"Times New Roman", Times, serif', 'Arial, Helvetica, sans-serif', '"Arial Black", Gadget, sans-serif', '"Comic Sans MS", cursive, sans-serif', 'Impact, Charcoal, sans-serif', '"Lucida Sans Unicode", "Lucida Grande", sans-serif', 'Tahoma, Geneva, sans-serif', '"Trebuchet MS", Helvetica, sans-serif', 'Verdana, Geneva, sans-serif', '"Courier New", Courier, monospace', '"Lucida Console", Monaco, monospace'],
@@ -578,7 +578,7 @@ var DOM = function () {
             units: null
         },
         'font-size': {
-            level: 1,
+            version: 1,
             group : 'font',
             definition: 'Specifies the font size of text',
             values: null,
@@ -586,7 +586,7 @@ var DOM = function () {
             units: ['px', 'pt', 'em', 'cm', '%']
         },
         'font-weight': {
-            level: 1,
+            version: 1,
             group : 'font',
             definition: 'Specifies the weight or thickness of a font',
             values: ['normal', 'bold', 'bolder', 'lighter', '100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -594,7 +594,7 @@ var DOM = function () {
             units: null
         },
         'font-style': {
-            level: 1,
+            version: 1,
             group : 'font',
             definition: 'Specifies the font style for text',
             values: ['normal', 'italic', 'oblique'],
@@ -602,7 +602,7 @@ var DOM = function () {
             units: null
         },
         'font-variant': {
-            level: 1,
+            version: 1,
             group : 'font',
             definition: 'Specifies whether or not a text should be displayed in a small-caps font',
             values: ['normal', 'small-caps'],
@@ -610,7 +610,7 @@ var DOM = function () {
             units: null
         },
         'list-style-image': {
-            level: 1,
+            version: 1,
             group: 'lists',
             definition: 'Specifies an image as the list-item marker',
             values: null,
@@ -618,7 +618,7 @@ var DOM = function () {
             units: null
         },
         'list-style-position': {
-            level: 1,
+            version: 1,
             group: 'lists',
             definition: 'Specifies if the list-item markers should appear inside or outside the content flow',
             values: ['inside', 'outside'],
@@ -626,7 +626,7 @@ var DOM = function () {
             units: null
         },
         'list-style-type': {
-            level: 1,
+            version: 1,
             group: 'lists',
             definition: '',
             values: ['armenian', 'cjk-ideographic', 'decimal', 'decimal-leading-zero', 'georgian', 'hebrew', 'hiragana', 'hiragana-iroha', 'katakana', 'katakana-iroha', 'lower-alpha', 'lower-greek', 'lower-latin', 'lower-roman', 'none', 'upper-alpha', 'upper-latin', 'upper-roman'],
@@ -704,36 +704,45 @@ var DOM = function () {
                 "A visited link is underlined and purple by default in most browsers.",
                 "An active link is underlined and red by default in most browsers.",
                 "The following attributes: download, hreflang, media, rel, target, and type cannot be present if the href attribute is not present.",
-                "A linked page is normally displayed in the current browser window, unless you specify another target."],
+                "A linked page is normally displayed in the current browser window, unless you specify another target."
+            ],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "phrasing",
                 "interactive",
-                "palpable"],
+                "palpable"
+            ],
             children: [
                 "flow",
-                "phrasing"],
+                "phrasing"
+            ],
             parent: [
                 "flow",
-                "phrasing"],
+                "phrasing"
+            ],
             ancestor: [
-                "body"],
+                "body"
+            ],
             attributes: [
                 "href",
                 "hreflang",
                 "media",
                 "rel",
                 "target",
-                "type"],
+                "type"
+            ],
             required: [
-                "href"],
+                "href"
+            ],
             tags: true,
             interface: [
-                "HTMLAnchorElement"],
+                "HTMLAnchorElement"
+            ],
             links: [
                 "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a",
-                "http://www.w3schools.com/tags/tag_a.asp"]
+                "http://www.w3schools.com/tags/tag_a.asp"
+            ]
         },
         abbr: {
             title: "HTML Abbreviation Element",
@@ -742,16 +751,20 @@ var DOM = function () {
                 "Use the title attribute to define the full description of the abbreviation. Many user agents present this as a tooltip.",
                 "By marking up abbreviations you can give useful information to browsers, spell checkers, translation systems and search-engine indexers."],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "phrasing",
-                "palpable"],
+                "palpable"
+            ],
             children: [
-                "phrasing"],
+                "phrasing"
+            ],
             parent: [
-                "phrasing"],
+                "phrasing"
+            ],
             ancestor: [
-                "body"],
+                "body"
+            ],
             attribute: null,
             required: [
                 "title"],
@@ -772,7 +785,7 @@ var DOM = function () {
                 "Typically the HTML Address &lt;address&gt; Element can be placed inside the HTML Footer &lt;footer&gt; Element of the current section, if any.",
                 "The text in the HTML Address &lt;address&gt; Element element usually renders in italic. Most browsers will add a line break before and after the address element."],
             display: "block",
-            category: [
+            model: [
                 "flow",
                 "phrasing",
                 "palpable"],
@@ -798,7 +811,7 @@ var DOM = function () {
             disclaimer: [
                 "The usemap attribute in the HTML Image &lt;image&gt; Element is associated with the HTML Map &lt;map&gt; Element's name attribute, and creates a relationship between the &lt;image&gt; and the &lt;map&gt;."],
             display: "hidden",
-            category: [
+            model: [
                 "flow",
                 "phrasing"],
             children: null,
@@ -839,7 +852,7 @@ var DOM = function () {
                 "Author information of an HTML Article &lt;article&gt; Element element can be provided through the HTML Address &lt;address&gt; Element, but it doesn't apply to nested HTML Article &lt;article&gt; Element.",
                 "The publication date and time of an HTML Article &lt;article&gt; Element element can be described using the pubdate attribute of a HTML Time &lt;time&gt; Element."],
             display: "block",
-            category: [
+            model: [
                 "flow",
                 "sectioning",
                 "palpable"],
@@ -866,7 +879,7 @@ var DOM = function () {
                 "The HTML Aside &lt;aside&gt; Element's content should be related to the surrounding content.",
                 "The HTML Aside &lt;aside&gt; Element's content could be placed as a sidebar in an HTML Article &lt;article&gt; Element."],
             display: "block",
-            category: [
+            model: [
                 "flow",
                 "sectioning",
                 "palpable"],
@@ -892,7 +905,7 @@ var DOM = function () {
                 "Fallback content for browser not supporting the HTML Audio &lt;audio&gt; Element can be added too.",
                 "Any text inside the HTML Audio &lt;audio&gt; Element will be displayed in browsers that do not support the HTML Audio &lt;audio&gt; Element."],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "interactive",
                 "embedded",
@@ -929,7 +942,7 @@ var DOM = function () {
                 "According to the HTML 5 specification, the HTML Bold &lt;b&gt; Element should be used as a LAST resort when no other element is more appropriate.",
                 "The HTML 5 specification states that headings should be denoted with the HTML H1 &lt;h1&gt; to H6 &lt;h6&gt; Elements, emphasized text should be denoted with the HTML Emphasis &lt;em&gt; Element, important text should be denoted with the HTML Strong &lt;strong&gt; Element, and marked/highlighted text should use the HTML Marked &lt;mark&gt; Element tag."],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "phrasing",
                 "palpable"],
@@ -959,7 +972,7 @@ var DOM = function () {
                 "Put the HTML Base &lt;base/&gt; Element as the first element inside the HTML Head &lt;head&gt; Element, so that other elements in the head section uses the information from the HTML Base &lt;base/&gt; Element.",
                 "If the HTML Base &lt;base/&gt; Element tag is present, it must have either an href attribute or a target attribute, or both."],
             display: "void",
-            category: [
+            model: [
                 "metadata"],
             children: null,
             parent: null,
@@ -985,7 +998,7 @@ var DOM = function () {
                 "Use &lt;q&gt; for inline (short) quotations.",
                 "To change &lt;blockquote&gt; indent, use CSS margin property."],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "sectioning",
                 "palpable"],
@@ -1016,7 +1029,7 @@ var DOM = function () {
                 "",
                 ""],
             display: "inline",
-            category: [
+            model: [
                 "sectioning"],
             children: [
                 "flow"],
@@ -1039,7 +1052,7 @@ var DOM = function () {
                 "It is an empty tag which means that it has no end tag.",
                 "Do not use HTML Line Break &lt;br&gt; Element to increase the gap between lines of text; use the CSS margin property or the HTML Paragraph &lt;p&gt; Element."],
             display: "block",
-            category: [
+            model: [
                 "flow",
                 "phrasing"],
             children: null,
@@ -1066,7 +1079,7 @@ var DOM = function () {
                 "If you use the &lt;button&gt; element in an HTML form, different browsers may submit different values. Use &lt;input&gt; to create buttons in an HTML form.",
                 "&lt;button&gt; elements are much easier to style than &lt;input&gt; elements. You can add inner HTML content (think &lt;em&gt;, &lt;strong&gt; or even &lt;img&gt;), and make use of :after and :before pseudo-element to achieve complex rendering while &lt;input&gt; only accepts a text value attribute."],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "phrasing",
                 "palpable",
@@ -1109,7 +1122,7 @@ var DOM = function () {
             disclaimer: [
                 "You may (and should) provide alternate content inside the HTML Canvas Element. That content will be rendered both on older browsers that don't support canvas and in browsers with JavaScript disabled."],
             display: "block",
-            category: [
+            model: [
                 "flow",
                 "phrasing",
                 "embedded",
@@ -1141,7 +1154,7 @@ var DOM = function () {
                 "The &lt;div&gt; element is very often used together with CSS, to layout a web page.",
                 "By default, browsers always place a line break before and after the &lt;div&gt; element. However, this can be changed with CSS."],
             display: "block",
-            category: [
+            model: [
                 "flow",
                 "palpable"],
             children: [
@@ -1165,7 +1178,7 @@ var DOM = function () {
             disclaimer: [
                 "Typically this element is displayed in italic type. However, it should not be used simply to apply italic styling; use the CSS styling for that purpose. Use the &lt;cite&gt; element to mark the title of a work (book, play, song, etc.); it is also typically styled with italic type, but carries different meaning. Use the &lt;strong&gt; element to mark text that has greater importance than surrounding text."],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "phrasing",
                 "palpable"],
@@ -1196,7 +1209,7 @@ var DOM = function () {
                 "",
                 ""],
             display: "block",
-            category: [
+            model: [
                 "flow",
                 "palpable"],
             children: [
@@ -1225,7 +1238,7 @@ var DOM = function () {
                 "",
                 ""],
             display: "block",
-            category: [
+            model: [
                 "flow",
                 "palpable"],
             children: [
@@ -1266,7 +1279,7 @@ var DOM = function () {
                 "&lt;h6&gt; defines the least important heading.",
                 "Default CSS font-size property is 2em"],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "heading",
                 "palpable"],
@@ -1297,7 +1310,7 @@ var DOM = function () {
                 "&lt;h6&gt; defines the least important heading.",
                 "Default CSS font-size property is 1.5em"],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "heading",
                 "palpable"],
@@ -1328,7 +1341,7 @@ var DOM = function () {
                 "&lt;h6&gt; defines the least important heading.",
                 "Default CSS font-size property is 1.17em"],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "heading",
                 "palpable"],
@@ -1359,7 +1372,7 @@ var DOM = function () {
                 "&lt;h6&gt; defines the least important heading.",
                 "Default CSS font-size property is 1em"],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "heading",
                 "palpable"],
@@ -1390,7 +1403,7 @@ var DOM = function () {
                 "&lt;h6&gt; defines the least important heading.",
                 "Default CSS font-size property is 0.83em"],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "heading",
                 "palpable"],
@@ -1421,7 +1434,7 @@ var DOM = function () {
                 "&lt;h6&gt; defines the least important heading.",
                 "Default CSS font-size property is 0.67em"],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "heading",
                 "palpable"],
@@ -1448,7 +1461,7 @@ var DOM = function () {
                 "The &lt;header&gt; element is not sectioning content and therefore doesn't introduce a new section in the outline.",
                 "A &lt;header&gt; tag cannot be placed within a &lt;footer&gt;, &lt;address&gt; or another &lt;header&gt; element."],
             display: "block",
-            category: [
+            model: [
                 "flow",
                 "palpable"],
             children: [
@@ -1473,7 +1486,7 @@ var DOM = function () {
             disclaimer: [
                 "To change look of rule or gaps between it and paragraphs, use CSS Margin, Height, e.t.c."],
             display: "block",
-            category: [
+            model: [
                 "flow"],
             children: null,
             parent: [
@@ -1496,7 +1509,7 @@ var DOM = function () {
                 "In earlier versions of the HTML specification, the &lt;i&gt; tag was merely a presentational element used to display text in italics, much like the &lt;b&gt; tag was used to display text in bold letters. This is no longer true, as these tags now define semantics rather than typographic appearance. The &lt;i&gt; tag should represent a range of text with a different semantic meaning whose typical typographic representation is italicized.  This means a browser will typically still display its contents in italic type, but is, by definition, no longer required to.",
                 "It is a good idea to use the class attribute to identify why the element is being used, so that if the presentation needs to change at a later date, it can be done selectively with style sheets."],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "phrasing",
                 "palpable"],
@@ -1527,7 +1540,7 @@ var DOM = function () {
                 "",
                 ""],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "phrasing",
                 "embedded",
@@ -1566,7 +1579,7 @@ var DOM = function () {
                 "Images are not technically inserted into an HTML page, images are linked to HTML pages. The &lt;img&gt; tag creates a holding space for the referenced image.",
                 "To link an image to another document, simply nest the &lt;img&gt; tag inside &lt;a&gt; tags."],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "phrasing",
                 'embedded',
@@ -1601,7 +1614,7 @@ var DOM = function () {
             disclaimer: [
                 "The &lt;input&gt; elements are used within a &lt;form&gt; element to declare input controls that allow users to input data."],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "listed",
                 "submittable",
@@ -1666,7 +1679,7 @@ var DOM = function () {
                 "A label can be bound to an element either by using the 'for' attribute, or by placing the element inside the &lt;label&gt; element.",
                 "No descendant label elements. No labelable elements other than the labeled control are allowed."],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "interactive",
                 "form",
@@ -1701,7 +1714,7 @@ var DOM = function () {
                 "",
                 ""],
             display: "inline",
-            category: null,
+            model: null,
             children: [
                 "flow"],
             parent: [
@@ -1727,7 +1740,7 @@ var DOM = function () {
                 "The required name attribute of the &lt;map&gt; element is associated with the &lt;img&gt;'s usemap attribute and creates a relationship between the image and the map.",
                 "The &lt;map&gt; element contains a number of &lt;area&gt; elements, that defines the clickable areas in the image map."],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "phrasing",
                 "palpable"],
@@ -1757,7 +1770,7 @@ var DOM = function () {
                 "User agents, such as screen readers targeting disabled users, can use this element to determine whether to omit the initial rendering of this content.",
                 "Browsers, such as screen readers for disabled users, can use this element to determine whether to omit the initial rendering of this content."],
             display: "block",
-            category: [
+            model: [
                 "flow",
                 "sectioning",
                 "palpable"],
@@ -1784,7 +1797,7 @@ var DOM = function () {
                 "There is no limitation to the depth and imbrication of lists defined with the &lt;ol&gt; and &lt;ul&gt; elements.",
                 "The &lt;ol&gt; and &lt;ul&gt; both represent a list of items. They differ in the way that, with the &lt;ol&gt; element, the order is meaningful. As a rule of thumb to determine which one to use, try changing the order of the list items; if the meaning is changed, the &lt;ol&gt; element should be used, else the &lt;ul&gt; is adequate."],
             display: "block",
-            category: [
+            model: [
                 "flow",
                 "palpable"],
             children: [
@@ -1812,7 +1825,7 @@ var DOM = function () {
                 "To change gaps between paragraphs use CSS margin property. Do not insert empty paragraphs elements or &lt;br&gt; between them.",
                 "Browsers automatically add some space (margin) before and after each &lt;p&gt; element. The margins can be modified with CSS (with the margin properties)."],
             display: "block",
-            category: [
+            model: [
                 "flow",
                 "palpable"],
             children: [
@@ -1837,7 +1850,7 @@ var DOM = function () {
                 "The &lt;del&gt; element is to be used instead if the data has been deleted.",
                 "The CSS text-decoration property can be used to achieve the visual aspect of the &lt;s&gt; element."],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "phrasing"],
             children: [
@@ -1864,7 +1877,7 @@ var DOM = function () {
                 "Do not use the &lt;section&gt; element as a generic container; this is what &lt;div&gt; is for, especially when the sectioning is only for styling purposes. A rule of thumb is that a section should logically appear in the outline of a document.",
                 "Note that a &lt;section&gt; element must not be a descendant of an &lt;address&gt; element."],
             display: "block",
-            category: [
+            model: [
                 "flow",
                 "sectioning",
                 "palpable"],
@@ -1892,7 +1905,7 @@ var DOM = function () {
                 "The &lt;span&gt; tag provides a way to add a hook to a part of a text or a part of a document.",
                 "When a text is hooked in a &lt;span&gt; element, you can style it with CSS, or manipulate it with JavaScript."],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "phrasing"],
             children: [
@@ -1919,7 +1932,7 @@ var DOM = function () {
                 "Bold vs. Strong: Strong is a logical state, and bold is a physical state. Logical states separate presentation from the content, and by doing so allow for it to be expressed in many different ways. Perhaps instead of rendering some text as bold you want to render it red, or a different size, or underlined, or whatever. It makes more sense to change the presentational properties of strong than it does bold. This is because bold is a physical state; there is no separation of presentation and content, and making bold do anything other than bold text would be confusing and illogical.",
                 "Emphasis vs. Strong: is described as representing strong importance for its contents. This is an important distinction to make. While Emphasis is used to change the meaning of a sentence , Strong is used to give portions of a sentence added importance. Both Strong and Emphasis can be nested to increase the relative degree of importance or stress emphasis, respectively."],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "phrasing"],
             children: [
@@ -1946,7 +1959,7 @@ var DOM = function () {
                 "The HTML Subscript Element must not be used for styling purpose like the styling of the product name Latex. In that case CSS style should be used: the vertical-align property with the sub value will achieve the same effect.",
                 "HTML Subscript Element's text appears half a character below the normal line, and is sometimes rendered in a smaller font."],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "phrasing"],
             children: [
@@ -1972,7 +1985,7 @@ var DOM = function () {
                 "The HTML Superscript Element must not be used for styling purpose like the styling of the product name Latex. In that case CSS style should be used: the vertical-align property with the super value will achieve the same effect.",
                 "HTML Superscript Element's text appears half a character above the normal line, and is sometimes rendered in a smaller font."],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "phrasing"],
             children: [
@@ -2001,7 +2014,7 @@ var DOM = function () {
                 "",
                 ""],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "phrasing",
                 "palpable",
@@ -2050,7 +2063,7 @@ var DOM = function () {
                 "The HTML Time Element cannot be a descendant of another HTML Time Element.",
                 "The HTML Time Element can also be used to encode dates and times in a machine-readable way so that user agents can offer to add birthday reminders or scheduled events to the user's calendar, and search engines can produce smarter search results."],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "phrasing",
                 "palpable"],
@@ -2079,7 +2092,7 @@ var DOM = function () {
                 "The HTML 5 specification reminds developers that other elements are almost always more appropriate than &lt;u&gt;.",
                 "The CSS text-decoration property can be used to achieve the visual aspect of the HTML Underline Element element."],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "phrasing",
                 "palpable"],
@@ -2107,26 +2120,33 @@ var DOM = function () {
                 "There is no limitation to the depth and imbrication of lists defined with the &lt;ol&gt; and &lt;ul&gt; elements.",
                 "The &lt;ol&gt; and &lt;ul&gt; both represent a list of items. They differ in the way that, with the &lt;ol&gt; element, the order is meaningful. As a rule of thumb to determine which one to use, try changing the order of the list items; if the meaning is changed, the &lt;ol&gt; element should be used, else the &lt;ul&gt; is adequate."],
             display: "block",
-            category: [
+            model: [
                 "flow",
-                "palpable"],
+                "palpable"
+            ],
             children: [
-                "li"],
+                "li"
+            ],
             parent: [
-                "flow"],
+                "flow"
+            ],
             ancestor: [
-                "body"],
+                "body"
+            ],
             attribute: [
                 "reversed",
                 "start",
-                "type"],
+                "type"
+            ],
             required: null,
             tags: true,
             interface: [
-                "HTMLUListElement"],
+                "HTMLUListElement"
+            ],
             links: [
                 "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul",
-                "http://www.w3schools.com/tags/tag_ul.asp"]
+                "http://www.w3schools.com/tags/tag_ul.asp"
+            ]
         },
         video: {
             title: "HTML Video Element",
@@ -2134,20 +2154,24 @@ var DOM = function () {
             disclaimer: [
                 "For a list of supported formats, see: https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats",
                 "Currently, there are 3 supported video formats for the &lt;video&gt; element: MP4, WebM, and Ogg:",
-                "Any text between the &lt;video&gt; and &lt;/video&gt; tags will be displayed in browsers that do not support the &lt;video&gt; element."],
+                "Any text between the &lt;video&gt; and &lt;/video&gt; tags will be displayed in browsers that do not support the &lt;video&gt; element."
+            ],
             display: "inline",
-            category: [
+            model: [
                 "flow",
                 "phrasing",
                 "embedded",
                 "interactive",
                 "palpable"],
             children: [
-                "phrasing"],
+                "phrasing"
+            ],
             parent: [
-                "phrasing"],
+                "phrasing"
+            ],
             ancestor: [
-                "body"],
+                "body"
+            ],
             attribute: [
                 "autoplay",
                 "buffered",
@@ -2160,14 +2184,17 @@ var DOM = function () {
                 "poster",
                 "preload",
                 "src",
-                "width"],
+                "width"
+            ],
             required: null,
             tags: true,
             interface: [
-                "HTMLVideoElement"],
+                "HTMLVideoElement"
+            ],
             links: [
                 "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video",
-                "http://www.w3schools.com/tags/tag_video.asp"]
+                "http://www.w3schools.com/tags/tag_video.asp"
+            ]
         }
     };
-};
+})();
