@@ -10,16 +10,16 @@ You would first need to load the JS file containing this DOM object. You can add
 
 To get more information from an element while contenteditable mode is set to active:
 ```javascript
-  var dom = new DOM();
-  
+
   $(document).on('mouseup', function(e)
   {
     var target  = e.target;
     var tagname = target.tagName.toLowerCase();
     
-    var element = dom.element[tagname];
+    var element = DOM.element[tagname];
     var isTags  = element.tags;
   });
+  
 ```
 
 ## Glossary
