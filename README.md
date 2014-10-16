@@ -1,18 +1,35 @@
 DOM
 ===
 
-A collection of DOM Elements, CSS Properties, DOM Content Models and more in JavaScript Objects for use with Web Applications.
+A collection of DOM Elements, CSS Properties, DOM Content Models and more in JavaScript Helper Objects for use with Web Applications.
 
 Created object primarily for use with a CSS Editor UI. Can be expanded for use with any Web Application that needs DOM elements information and CSS properties.
 
+## How to Use
+You would first need to load the JS file containing this DOM object. You can add as many other objects and helper functions to the DOM object if you wish to maintain a single DOM object with all DOM helpers.
+
+To get more information from an element while contenteditable mode is set to active:
+```javascript
+  var dom = new DOM();
+  
+  $(document).on('mouseup', function(e)
+  {
+    var target  = e.target;
+    var tagname = target.tagName.toLowerCase();
+    
+    var element = dom.element[tagname];
+    var isTags  = element.tags;
+  });
+```
 
 ## Glossary
+Below are a list of all the properties and sub-properties of DOM along with the definitions.
 
 #### DOM.colors
 Lists all pre-named css colors. Designers would love this!
 
 #### DOM.cssProperties
-List the most common CSS Properties. This was created for the CSS Editor UI, so most shorthand properties are not included so it mimics getComputedStyle. May create a full list in the future.
+Lists the most common CSS Properties. This was created for the CSS Editor UI, so most shorthand properties are not included so it mimics getComputedStyle. May create a full list in the future.
 * DOM.cssProperties.version - CSS Version 1, 2 or 3.
 * DOM.cssProperties.group - CSS Property Groups.
 * DOM.cssProperties.definition - Definition of CSS Property.
