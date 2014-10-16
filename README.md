@@ -24,7 +24,7 @@ To get more information from an element while contenteditable mode is set to act
 Below are a list of all the properties and sub-properties of DOM along with the definitions.
 
 #### DOM.colors
-Lists all pre-named css colors. Designers would love this!
+Lists all pre-named css colors. Designers would love this! Use as a dropdown/selection in addition to any CSS ColorWheel UI.
 
 #### DOM.cssProperties
 Lists the most common CSS Properties. This was created for the CSS Editor UI, so most shorthand properties are not included so it mimics getComputedStyle. May create a full list in the future.
