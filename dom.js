@@ -2531,4 +2531,97 @@ var DOM = (function() {
             ]
         }
     };
+    
+    this.attributes = function(element)
+    {
+        var attributes  = {};
+            element     = $(element).get(0);
+        
+        if(!element) return attributes;
+        
+        $.each(element.attributes, function(index, attribute)
+        {
+            var n = attr.name || attr.nodeName;
+            var v = attr.value || attr.nodeValue;
+                    
+            if(n) attributes[n] = v;
+        });
+        
+        return attributes;
+    };
+    
+    this.value = function(element, content, params)
+    {
+        element     = $(element).get(0);
+        
+        if(!element) return null;
+        
+        var domain  = document.location.protocol && document.domain ? ( document.location.protocol + "//" + document.domain ) : "";
+        var tagName = element.tagName.toLowerCase();;
+        var txt     = full = typeOf params === 'boolean' ? params : null;
+        var val     = null;
+        
+        if(content)
+        {
+            switch(tagName)
+            {
+                case 'input':
+                    element.value   = content.trim();
+                    val	    = true;
+                break;
+                case 'textarea':
+                    element.value  = content.trim();
+                    val	    = true;
+                break;
+                case 'select':
+                    element.options[element.selectedIndex].value = content.trim();
+                    _success	= true;
+                break;
+                case 'img':
+                    element.src    = content.trim().replace(model.domain(), '');
+                    if($(element).attr('data-src')) $(element).attr('data-src', val.trim().replace(model.domain(), ''));
+                    _success	= true;
+                break;
+                case 'a':
+                    element.href   = full ? content.trim() : content.trim().replace(model.domain(), '');
+                    _success	= true;
+                break;
+                case 'iframe':
+                    element.src    = content.trim();
+                    _success	= true;
+                break;
+                default:
+                    _obj.innerHTML = content.trim();
+                    _success	= true;
+            }
+        }
+        else
+        {
+           switch(tagName)
+            {
+                case 'input':
+                    val = element.value.trim();
+                break;
+                case 'textarea':
+                    val = element.value.trim();
+                break;
+                case 'select':
+                    val = element.options[element.selectedIndex].value.trim();
+                break;
+                case 'img':
+                    val = full ? element.src : element.src.replace(String(domain), '');
+                break;
+                case 'a':
+                    val = full ? element.href : element.href.replace(String(domain), '');
+                break;
+                case 'iframe':
+                    val = element.src;
+                break;
+                default:
+                    val = txt ? $(element).text().trim() : $(element).html().trim();
+            }
+        }
+        
+        return val;
+    };
 })();
